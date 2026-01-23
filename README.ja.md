@@ -148,11 +148,10 @@ docker compose -f compose/docker-compose.local.yml down
 フィードバック歓迎です。
 
 - GitHub Issues
-- Discussions（有効な場合）
 
 ## ライセンス
 
-TBD
+Apache-2.0（[`LICENSE`](LICENSE) を参照）
 
 ## 備考
 

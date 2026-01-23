@@ -139,11 +139,10 @@ docker compose -f compose/docker-compose.local.yml down
 Feedback is welcome and appreciated.
 
 - GitHub Issues
-- Discussions (if enabled)
 
 ## License
 
-TBD
+Apache-2.0. See [`LICENSE`](LICENSE).
 
 ## Notes
 
