@@ -1,0 +1,25 @@
+services:
+  api:
+    image: ${RIZM_API_IMAGE:-kabekenputer/keel-api:latest}
+    env_file:
+      - ../.env
+    environment:
+      KEEL_BIND: "0.0.0.0:48888"
+      KEEL_DB_PATH: "/data/keel.sqlite3"
+      KEEL_COOKIE_SECURE: ${KEEL_COOKIE_SECURE:-false}
+    volumes:
+      - rizm-data:/data
+    restart: unless-stopped
+
+  web:
+    image: ${RIZM_WEB_IMAGE:-kabekenputer/keel-web:latest}
+    env_file:
+      - ../.env
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  rizm-data:
