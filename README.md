@@ -1,19 +1,24 @@
 # Rizm (Beta)
 
-Rizm is a self-hosted workspace system designed to run entirely in your own environment.
+**Language / 言語**: [English](README.md) | [日本語](README.ja.md)
 
-This repository provides beta releases and minimal documentation for early evaluation.
+---
+
+Rizm is a self-hosted workspace system designed to run entirely in your environment.
+
+This repository provides beta builds and minimal documentation for early evaluation.
+
+**Try the demo**: [https://demo.test-perspective.com/](https://demo.test-perspective.com/)
 
 ## Overview
 
 Rizm enables teams to manage structured information in a configurable workspace.
 
-- Runs on your own environment
+- Runs in your environment
 - Workspace structure is defined by configuration
-- Built-in web UI
-- Designed for internal and team-level use
+- Designed for internal/team use
 
-Exact capabilities depend on configuration and version.
+Capabilities depend on your configuration and the version.
 
 ## Beta Status
 
@@ -32,11 +37,9 @@ This is an early beta.
 
 ### Prerequisites
 
-- Docker and Docker Compose installed
-  - **Windows/macOS**: Docker Desktop includes Docker Compose
-  - **Linux**: Install Docker Engine and Docker Compose plugin
-    - Ubuntu/Debian: `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
-    - See [Docker documentation](https://docs.docker.com/engine/install/) for other distributions
+- Rizm requires Docker and Docker Compose (`docker compose`).
+  - **Windows/macOS**: the setup scripts will install Docker Desktop if needed (and start it if installed)
+  - **Linux**: `setup-linux.sh` will install Docker Engine and the Docker Compose plugin if missing (Ubuntu/Debian; requires `sudo`)  \n+    If your distribution is not supported, the script will stop and print manual install instructions: [Docker documentation](https://docs.docker.com/engine/install/)
 
 ### Quick Start
 
@@ -65,7 +68,7 @@ Access Rizm at: `http://localhost:8080`
 
 #### Option 2: Domain Deployment (HTTPS)
 
-For production use with your own domain and automatic SSL certificates:
+For deployments with your own domain and automatic SSL certificates (Let’s Encrypt):
 
 **Windows:**
 ```powershell
@@ -83,9 +86,9 @@ For production use with your own domain and automatic SSL certificates:
 ```
 
 **Requirements for domain mode:**
-- Domain name pointing to your server's IP address
+- A domain name pointing to your server's IP address
 - Ports 80 and 443 open in your firewall
-- Email address for Let's Encrypt certificate notifications
+- An email address for Let’s Encrypt notifications
 
 Access Rizm at: `https://your-domain.com`
 
@@ -107,12 +110,12 @@ If you prefer to set up manually:
 
 ### Default Credentials
 
-After first startup, you can log in with:
+After the first startup, you can log in with:
 
 - **Email**: `admin@example.local`
 - **Password**: `change-this-password`
 
-**Important**: Change the default password in production environments.
+**Important**: Change the default password before any real deployment.
 
 ### Managing the Installation
 
@@ -144,5 +147,4 @@ TBD
 
 ## Notes
 
-This beta focuses on usability and operational feedback.
-More details will be shared as the project evolves.
+This beta focuses on usability and operational feedback. More details will be shared as the project evolves.
