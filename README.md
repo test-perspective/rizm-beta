@@ -70,12 +70,12 @@ For quick local testing without a domain:
 
 **Linux:**
 ```bash
-./scripts/setup-linux.sh local
+bash ./scripts/setup-linux.sh local
 ```
 
 **macOS:**
 ```bash
-./scripts/setup-macos.sh local
+bash ./scripts/setup-macos.sh local
 ```
 
 Access Rizm at: `http://localhost:8080`
@@ -97,12 +97,12 @@ For deployments with your own domain and automatic SSL certificates (Let's Encry
 
 **Linux:**
 ```bash
-./scripts/setup-linux.sh domain your-domain.com your-email@example.com
+bash ./scripts/setup-linux.sh domain your-domain.com your-email@example.com
 ```
 
 **macOS:**
 ```bash
-./scripts/setup-macos.sh domain your-domain.com your-email@example.com
+bash ./scripts/setup-macos.sh domain your-domain.com your-email@example.com
 ```
 
 **Requirements for domain mode:**

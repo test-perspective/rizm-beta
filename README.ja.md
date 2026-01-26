@@ -71,13 +71,13 @@ Gitがインストールされていない場合は、[GitHub](https://github.co
 **Linux**
 
 ```bash
-./scripts/setup-linux.sh local
+bash ./scripts/setup-linux.sh local
 ```
 
 **macOS**
 
 ```bash
-./scripts/setup-macos.sh local
+bash ./scripts/setup-macos.sh local
 ```
 
 アクセス: `http://localhost:8080`
@@ -99,13 +99,13 @@ docker compose -f compose/docker-compose.local.yml down
 **Linux**
 
 ```bash
-./scripts/setup-linux.sh domain your-domain.com your-email@example.com
+bash ./scripts/setup-linux.sh domain your-domain.com your-email@example.com
 ```
 
 **macOS**
 
 ```bash
-./scripts/setup-macos.sh domain your-domain.com your-email@example.com
+bash ./scripts/setup-macos.sh domain your-domain.com your-email@example.com
 ```
 
 **ドメイン運用の要件**
