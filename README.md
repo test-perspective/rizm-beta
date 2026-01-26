@@ -41,6 +41,17 @@ This is an early beta.
   - **Windows/macOS**: the setup scripts will install Docker Desktop if needed (and start it if installed)
   - **Linux**: `setup-linux.sh` will install Docker Engine and the Docker Compose plugin if missing (Ubuntu/Debian; requires `sudo`)  \n+    If your distribution is not supported, the script will stop and print manual install instructions: [Docker documentation](https://docs.docker.com/engine/install/)
 
+### Getting the Repository
+
+First, clone this repository to your local machine:
+
+```bash
+git clone https://github.com/test-perspective/rizm-beta.git
+cd rizm-beta
+```
+
+If you don't have Git installed, you can download the repository as a ZIP file from [GitHub](https://github.com/test-perspective/rizm-beta) and extract it.
+
 ### Quick Start
 
 **Start Guide**: For detailed instructions, see the [Rizm Start Guide](https://kenputer-documents.scrollhelp.site/rizm/rizm-start-guide).
@@ -94,17 +105,28 @@ Access Rizm at: `https://your-domain.com`
 
 ### Manual Setup
 
-If you prefer to set up manually:
+If you prefer to set up manually instead of using the setup scripts:
 
-1. Clone or download this repository
-2. Copy `.env.example` to `.env` and edit as needed
-3. Choose a compose file:
+1. **Clone the repository** (if you haven't already):
+   ```bash
+   git clone https://github.com/test-perspective/rizm-beta.git
+   cd rizm-beta
+   ```
+
+2. **Copy the environment file**:
+   ```bash
+   cp .env.example .env
+   ```
+   Edit `.env` and adjust settings as needed.
+
+3. **Choose a compose file**:
    - `compose/docker-compose.local.yml` for local testing
    - `compose/docker-compose.domain.yml` for domain deployment
-4. Start with Docker Compose:
+
+4. **Start with Docker Compose**:
    ```bash
    docker compose -f compose/docker-compose.local.yml up -d
-   # or
+   # or for domain deployment:
    docker compose -f compose/docker-compose.domain.yml up -d
    ```
 
@@ -138,7 +160,7 @@ docker compose -f compose/docker-compose.local.yml down
 
 Feedback is welcome and appreciated.
 
-- GitHub Issues
+- [GitHub Issues](https://github.com/test-perspective/rizm-beta/issues)
 
 ## License
 

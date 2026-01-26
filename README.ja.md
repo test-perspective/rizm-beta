@@ -43,6 +43,17 @@ Rizm の起動には **Docker** と **Docker Compose**（`docker compose`）が�
 - **Linux**: `setup-linux.sh` が Docker Engine / Docker Compose plugin を未導入ならインストールします（Ubuntu/Debian想定、`sudo` が必要です）  
   ※対応外ディストリビューションの場合はエラーで止まり、手動インストール案内を表示します（公式手順: [Docker Engine install](https://docs.docker.com/engine/install/)）
 
+### リポジトリの取得
+
+まず、このリポジトリをローカルマシンにクローンします：
+
+```bash
+git clone https://github.com/test-perspective/rizm-beta.git
+cd rizm-beta
+```
+
+Gitがインストールされていない場合は、[GitHub](https://github.com/test-perspective/rizm-beta)からZIPファイルとしてダウンロードして展開することもできます。
+
 ### クイックスタート
 
 **スタートガイド**: 詳細は [Rizm スタートガイド](https://kenputer-documents.scrollhelp.site/rizm/rizm-start-guide) を参照してください。
@@ -99,18 +110,30 @@ Rizm の起動には **Docker** と **Docker Compose**（`docker compose`）が�
 
 ### 手動で起動する
 
-1. このリポジトリをクローン（または ZIP でダウンロード）
-2. `.env.example` を `.env` にコピーして必要に応じて編集
-3. 起動用の compose ファイルを選ぶ
+セットアップスクリプトを使わずに手動でセットアップする場合：
+
+1. **リポジトリをクローン**（まだの場合）:
+   ```bash
+   git clone https://github.com/test-perspective/rizm-beta.git
+   cd rizm-beta
+   ```
+
+2. **環境ファイルをコピー**:
+   ```bash
+   cp .env.example .env
+   ```
+   `.env` を編集して、必要に応じて設定を調整してください。
+
+3. **起動用の compose ファイルを選ぶ**:
    - `compose/docker-compose.local.yml`（ローカル用）
    - `compose/docker-compose.domain.yml`（ドメイン運用用）
-4. 起動
 
-```bash
-docker compose -f compose/docker-compose.local.yml up -d
-# または
-docker compose -f compose/docker-compose.domain.yml up -d
-```
+4. **Docker Compose で起動**:
+   ```bash
+   docker compose -f compose/docker-compose.local.yml up -d
+   # またはドメイン運用の場合:
+   docker compose -f compose/docker-compose.domain.yml up -d
+   ```
 
 ### デフォルトログイン
 
@@ -147,7 +170,7 @@ docker compose -f compose/docker-compose.local.yml down
 
 フィードバック歓迎です。
 
-- GitHub Issues
+- [GitHub Issues](https://github.com/test-perspective/rizm-beta/issues)
 
 ## ライセンス
 
