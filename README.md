@@ -10,6 +10,8 @@ This repository provides beta builds and minimal documentation for early evaluat
 
 **Try the demo**: [https://demo.test-perspective.com/](https://demo.test-perspective.com/)
 
+To log in on the demo site, use **"Sign in as Admin"** on the login page.
+
 ## Overview
 
 Rizm enables teams to manage structured information in a configurable workspace.
@@ -19,6 +21,8 @@ Rizm enables teams to manage structured information in a configurable workspace.
 - Designed for internal/team use
 
 Capabilities depend on your configuration and the version.
+
+**Start Guide**: For detailed instructions, see the [Rizm Start Guide](https://kenputer-documents.scrollhelp.site/rizm/rizm-start-guide).
 
 ## Beta Status
 
@@ -39,7 +43,8 @@ This is an early beta.
 
 - Rizm requires Docker and Docker Compose (`docker compose`).
   - **Windows/macOS**: the setup scripts will install Docker Desktop if needed (and start it if installed)
-  - **Linux**: `setup-linux.sh` will install Docker Engine and the Docker Compose plugin if missing (Ubuntu/Debian; requires `sudo`)  \n+    If your distribution is not supported, the script will stop and print manual install instructions: [Docker documentation](https://docs.docker.com/engine/install/)
+  - **Linux**: `setup-linux.sh` will install Docker Engine and the Docker Compose plugin if missing (Ubuntu/Debian; requires `sudo`)
+    - If your distribution is not supported, the script will stop and print manual install instructions: [Docker documentation](https://docs.docker.com/engine/install/)
 
 ### Getting the Repository
 
@@ -53,8 +58,6 @@ cd rizm-beta
 If you don't have Git installed, you can download the repository as a ZIP file from [GitHub](https://github.com/test-perspective/rizm-beta) and extract it.
 
 ### Quick Start
-
-**Start Guide**: For detailed instructions, see the [Rizm Start Guide](https://kenputer-documents.scrollhelp.site/rizm/rizm-start-guide).
 
 #### Option 1: Local Testing (HTTP)
 
@@ -79,7 +82,7 @@ Access Rizm at: `http://localhost:8080`
 
 #### Option 2: Domain Deployment (HTTPS)
 
-For deployments with your own domain and automatic SSL certificates (Let’s Encrypt):
+For deployments with your own domain and automatic SSL certificates (Let's Encrypt):
 
 **Windows:**
 ```powershell
@@ -99,7 +102,7 @@ For deployments with your own domain and automatic SSL certificates (Let’s Enc
 **Requirements for domain mode:**
 - A domain name pointing to your server's IP address
 - Ports 80 and 443 open in your firewall
-- An email address for Let’s Encrypt notifications
+- An email address for Let's Encrypt notifications
 
 Access Rizm at: `https://your-domain.com`
 

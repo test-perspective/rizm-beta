@@ -10,6 +10,8 @@ Rizm は、**あなたの環境内で完結して動作する**セルフホス�
 
 **デモサイト**: [https://demo.test-perspective.com/](https://demo.test-perspective.com/)
 
+デモサイトでログインする場合は、ログイン画面の **「Sign in as Admin」** からログインしてください。
+
 ## 概要
 
 Rizm は、設定可能なワークスペース上で、構造化された情報を扱うためのシステムです。
@@ -19,6 +21,8 @@ Rizm は、設定可能なワークスペース上で、構造化された情報
 - チーム内・社内用途を想定
 
 提供される機能は、設定やバージョンによって変わります。
+
+**スタートガイド**: 詳細は [Rizm スタートガイド](https://kenputer-documents.scrollhelp.site/rizm/rizm-start-guide) を参照してください。
 
 ## ベータ版について
 
@@ -56,8 +60,6 @@ Gitがインストールされていない場合は、[GitHub](https://github.co
 
 ### クイックスタート
 
-**スタートガイド**: 詳細は [Rizm スタートガイド](https://kenputer-documents.scrollhelp.site/rizm/rizm-start-guide) を参照してください。
-
 #### 1) ローカルで試す（HTTP）
 
 **Windows**
@@ -80,7 +82,7 @@ Gitがインストールされていない場合は、[GitHub](https://github.co
 
 アクセス: `http://localhost:8080`
 
-#### 2) ドメインで運用する（HTTPS / Let’s Encrypt）
+#### 2) ドメインで運用する（HTTPS / Let's Encrypt）
 
 **Windows**
 
@@ -104,7 +106,7 @@ Gitがインストールされていない場合は、[GitHub](https://github.co
 
 - DNS がサーバーの IP を指していること
 - ファイアウォールで `80/tcp` と `443/tcp` が開いていること
-- Let’s Encrypt 用の通知メールアドレス
+- Let's Encrypt 用の通知メールアドレス
 
 アクセス: `https://your-domain.com`
 
