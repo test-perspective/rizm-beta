@@ -65,7 +65,12 @@ For quick local testing without a domain:
 
 **Windows:**
 ```powershell
-.\scripts\setup-win.ps1 --mode local
+# PowerShell:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\scripts\setup-win.ps1 -Mode local
+
+# Or (recommended): works from any shell (PowerShell / cmd.exe / etc.)
+.\scripts\setup-win.cmd local
 ```
 
 **Linux:**
@@ -86,7 +91,12 @@ For deployments with your own domain and automatic SSL certificates (Let's Encry
 
 **Windows:**
 ```powershell
-.\scripts\setup-win.ps1 --mode domain --domain your-domain.com --email your-email@example.com
+# PowerShell:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\scripts\setup-win.ps1 -Mode domain -Domain your-domain.com -Email your-email@example.com
+
+# Or (recommended): works from any shell (PowerShell / cmd.exe / etc.)
+.\scripts\setup-win.cmd domain your-domain.com your-email@example.com
 ```
 
 **Linux:**
