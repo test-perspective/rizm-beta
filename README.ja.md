@@ -65,11 +65,6 @@ Gitがインストールされていない場合は、[GitHub](https://github.co
 **Windows**
 
 ```powershell
-# PowerShell:
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\scripts\setup-win.ps1 -Mode local
-
-# もしくは（推奨）: PowerShell/cmd.exe どちらからでも動く
 .\scripts\setup-win.cmd local
 ```
 
@@ -87,16 +82,17 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 アクセス: `http://localhost:8080`
 
+終了（停止）:
+
+```bash
+docker compose -f compose/docker-compose.local.yml down
+```
+
 #### 2) ドメインで運用する（HTTPS / Let's Encrypt）
 
 **Windows**
 
 ```powershell
-# PowerShell:
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\scripts\setup-win.ps1 -Mode domain -Domain your-domain.com -Email your-email@example.com
-
-# もしくは（推奨）: PowerShell/cmd.exe どちらからでも動く
 .\scripts\setup-win.cmd domain your-domain.com your-email@example.com
 ```
 

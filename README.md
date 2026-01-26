@@ -65,11 +65,6 @@ For quick local testing without a domain:
 
 **Windows:**
 ```powershell
-# PowerShell:
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\scripts\setup-win.ps1 -Mode local
-
-# Or (recommended): works from any shell (PowerShell / cmd.exe / etc.)
 .\scripts\setup-win.cmd local
 ```
 
@@ -85,17 +80,18 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 Access Rizm at: `http://localhost:8080`
 
+To stop:
+
+```bash
+docker compose -f compose/docker-compose.local.yml down
+```
+
 #### Option 2: Domain Deployment (HTTPS)
 
 For deployments with your own domain and automatic SSL certificates (Let's Encrypt):
 
 **Windows:**
 ```powershell
-# PowerShell:
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\scripts\setup-win.ps1 -Mode domain -Domain your-domain.com -Email your-email@example.com
-
-# Or (recommended): works from any shell (PowerShell / cmd.exe / etc.)
 .\scripts\setup-win.cmd domain your-domain.com your-email@example.com
 ```
 
