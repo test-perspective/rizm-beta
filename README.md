@@ -24,6 +24,7 @@ Capabilities depend on your configuration and the version.
 
 <img width="1476" height="831" alt="board" src="https://github.com/user-attachments/assets/e6a229e8-2739-410e-8aee-09ef50192e83" />
 
+<p></p>
 
 <img width="1482" height="824" alt="wiki" src="https://github.com/user-attachments/assets/45dca702-2cfd-4cc8-9181-fc97d0752272" />
 
