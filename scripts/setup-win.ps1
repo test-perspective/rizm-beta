@@ -137,9 +137,9 @@ Write-Host ""
 Write-Host "[5/5] Starting Rizm with Docker Compose..." -ForegroundColor Yellow
 
 $composeFile = if ($Mode -eq "domain") {
-  Join-Path $repoRoot "compose\docker-compose.domain.yml"
+  "compose\docker-compose.domain.yml"
 } else {
-  Join-Path $repoRoot "compose\docker-compose.local.yml"
+  "compose\docker-compose.local.yml"
 }
 
 Push-Location $repoRoot

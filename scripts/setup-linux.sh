@@ -189,9 +189,11 @@ fi
 echo ""
 echo "[5/5] Starting Rizm with Docker Compose..." >&2
 
-COMPOSE_FILE="$REPO_ROOT/compose/docker-compose.$MODE.yml"
-
 cd "$REPO_ROOT"
+
+# Use a relative compose path so Docker Compose treats the repo root as the project directory
+# (ensures ./.env is used for ${...} variable interpolation).
+COMPOSE_FILE="compose/docker-compose.$MODE.yml"
 
 $DOCKER_CMD compose -f "$COMPOSE_FILE" pull || echo "WARNING: docker compose pull failed, continuing anyway..." >&2
 

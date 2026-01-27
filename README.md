@@ -86,6 +86,12 @@ To stop:
 docker compose -f compose/docker-compose.local.yml down
 ```
 
+If you get a permission error on Linux (e.g., Ubuntu 24), run:
+
+```bash
+sudo docker compose -f compose/docker-compose.local.yml down
+```
+
 #### Option 2: Domain Deployment (HTTPS)
 
 For deployments with your own domain and automatic SSL certificates (Let's Encrypt):
@@ -111,6 +117,22 @@ bash ./scripts/setup-macos.sh domain your-domain.com your-email@example.com
 - An email address for Let's Encrypt notifications
 
 Access Rizm at: `https://your-domain.com`
+
+If your browser shows `ERR_SSL_UNRECOGNIZED_NAME_ALERT`, check the following on the server:
+
+```bash
+# 1) Make sure the domain is set in .env
+cat .env | egrep '^(APP_DOMAIN|LETSENCRYPT_EMAIL)='
+
+# 2) Make sure containers are running
+sudo docker compose -f compose/docker-compose.domain.yml ps
+
+# 3) Check proxy / ACME logs (certificate issuance + vhost)
+sudo docker logs nginx-proxy --tail 200
+sudo docker logs acme-companion --tail 200
+```
+
+Note: Let's Encrypt requires port 80 (HTTP) reachable from the Internet for HTTP-01 validation.
 
 ### Manual Setup
 

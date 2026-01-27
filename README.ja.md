@@ -88,6 +88,12 @@ bash ./scripts/setup-macos.sh local
 docker compose -f compose/docker-compose.local.yml down
 ```
 
+Ubuntu 24 などで権限エラーになる場合:
+
+```bash
+sudo docker compose -f compose/docker-compose.local.yml down
+```
+
 #### 2) ドメインで運用する（HTTPS / Let's Encrypt）
 
 **Windows**
@@ -115,6 +121,22 @@ bash ./scripts/setup-macos.sh domain your-domain.com your-email@example.com
 - Let's Encrypt 用の通知メールアドレス
 
 アクセス: `https://your-domain.com`
+
+ブラウザで `ERR_SSL_UNRECOGNIZED_NAME_ALERT` が出る場合、サーバー側で以下を確認してください:
+
+```bash
+# 1) .env にドメインが入っているか
+cat .env | egrep '^(APP_DOMAIN|LETSENCRYPT_EMAIL)='
+
+# 2) コンテナが起動しているか
+sudo docker compose -f compose/docker-compose.domain.yml ps
+
+# 3) proxy / ACME のログ（vhost生成・証明書発行）
+sudo docker logs nginx-proxy --tail 200
+sudo docker logs acme-companion --tail 200
+```
+
+※ Let's Encrypt は HTTP-01 検証のため、外部から `80/tcp` で到達できる必要があります。
 
 ### 手動で起動する
 
@@ -188,3 +210,4 @@ Apache-2.0（[`LICENSE`](LICENSE) を参照）
 
 このベータ版は、使い勝手や運用面のフィードバック収集を目的としています。  
 プロジェクトの進展にあわせて、順次情報を追加していきます。
+
