@@ -144,12 +144,14 @@ $composeFile = if ($Mode -eq "domain") {
 
 Push-Location $repoRoot
 try {
-  docker compose -f $composeFile pull
+  $envFile = Join-Path $repoRoot ".env"
+
+  docker compose --env-file $envFile -f $composeFile pull
   if ($LASTEXITCODE -ne 0) {
     Write-Host "WARNING: docker compose pull failed, continuing anyway..." -ForegroundColor Yellow
   }
   
-  docker compose -f $composeFile up -d
+  docker compose --env-file $envFile -f $composeFile up -d
   if ($LASTEXITCODE -ne 0) {
     Write-Host "ERROR: Failed to start containers" -ForegroundColor Red
     exit 1
@@ -173,9 +175,9 @@ try {
   Write-Host "  Email: admin@example.local" -ForegroundColor White
   Write-Host "  Password: change-this-password" -ForegroundColor White
   Write-Host ""
-  Write-Host "To check status: docker compose -f $composeFile ps" -ForegroundColor DarkGray
-  Write-Host "To view logs: docker compose -f $composeFile logs -f" -ForegroundColor DarkGray
-  Write-Host "To stop: docker compose -f $composeFile down" -ForegroundColor DarkGray
+  Write-Host "To check status: docker compose --env-file $envFile -f $composeFile ps" -ForegroundColor DarkGray
+  Write-Host "To view logs: docker compose --env-file $envFile -f $composeFile logs -f" -ForegroundColor DarkGray
+  Write-Host "To stop: docker compose --env-file $envFile -f $composeFile down" -ForegroundColor DarkGray
   
 } finally {
   Pop-Location

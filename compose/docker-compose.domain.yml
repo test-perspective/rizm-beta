@@ -16,7 +16,7 @@ services:
     image: nginxproxy/acme-companion:latest
     container_name: acme-companion
     env_file:
-      - ../.env
+      - ./.env
     environment:
       NGINX_PROXY_CONTAINER: nginx-proxy
       DEFAULT_EMAIL: ${LETSENCRYPT_EMAIL:-}
@@ -33,7 +33,7 @@ services:
   api:
     image: ${RIZM_API_IMAGE:-kabekenputer/keel-api:latest}
     env_file:
-      - ../.env
+      - ./.env
     environment:
       KEEL_BIND: "0.0.0.0:48888"
       KEEL_DB_PATH: "/data/keel.sqlite3"
@@ -45,7 +45,7 @@ services:
   web:
     image: ${RIZM_WEB_IMAGE:-kabekenputer/keel-web:latest}
     env_file:
-      - ../.env
+      - ./.env
     environment:
       VIRTUAL_HOST: ${APP_DOMAIN:-}
       LETSENCRYPT_HOST: ${APP_DOMAIN:-}

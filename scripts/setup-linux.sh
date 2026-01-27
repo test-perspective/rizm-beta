@@ -195,9 +195,9 @@ cd "$REPO_ROOT"
 # (ensures ./.env is used for ${...} variable interpolation).
 COMPOSE_FILE="compose/docker-compose.$MODE.yml"
 
-$DOCKER_CMD compose -f "$COMPOSE_FILE" pull || echo "WARNING: docker compose pull failed, continuing anyway..." >&2
+$DOCKER_CMD compose --env-file "$ENV_PATH" -f "$COMPOSE_FILE" pull || echo "WARNING: docker compose pull failed, continuing anyway..." >&2
 
-$DOCKER_CMD compose -f "$COMPOSE_FILE" up -d
+$DOCKER_CMD compose --env-file "$ENV_PATH" -f "$COMPOSE_FILE" up -d
 
 if [ $? -ne 0 ]; then
   echo "ERROR: Failed to start containers" >&2
@@ -222,6 +222,6 @@ echo "Default admin credentials:"
 echo "  Email: admin@example.local"
 echo "  Password: change-this-password"
 echo ""
-echo "To check status: $DOCKER_CMD compose -f $COMPOSE_FILE ps"
-echo "To view logs: $DOCKER_CMD compose -f $COMPOSE_FILE logs -f"
-echo "To stop: $DOCKER_CMD compose -f $COMPOSE_FILE down"
+echo "To check status: $DOCKER_CMD compose --env-file $ENV_PATH -f $COMPOSE_FILE ps"
+echo "To view logs: $DOCKER_CMD compose --env-file $ENV_PATH -f $COMPOSE_FILE logs -f"
+echo "To stop: $DOCKER_CMD compose --env-file $ENV_PATH -f $COMPOSE_FILE down"
