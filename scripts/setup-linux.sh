@@ -72,13 +72,37 @@ fi
 # Wait for Docker to be ready
 echo ""
 echo "[2/5] Waiting for Docker to be ready..." >&2
-MAX_WAIT=30
+MAX_WAIT=60
 WAITED=0
+
+# Prefer plain docker, but fall back to sudo docker when the user
+# doesn't have permission to access the Docker socket yet.
+DOCKER_CMD="docker"
+
+docker_version_ok() {
+  docker version >/dev/null 2>&1
+}
+
+sudo_docker_version_ok() {
+  sudo -n docker version >/dev/null 2>&1
+}
+
 while [ $WAITED -lt $MAX_WAIT ]; do
-  if docker version >/dev/null 2>&1; then
+  if docker_version_ok; then
+    DOCKER_CMD="docker"
     echo "  OK: Docker is ready" >&2
     break
   fi
+
+  # If docker is installed but the current user can't access the socket,
+  # sudo docker may work (common right after installation / before re-login).
+  if sudo_docker_version_ok; then
+    DOCKER_CMD="sudo docker"
+    echo "  OK: Docker is ready (using sudo)" >&2
+    echo "  Note: You may need to log out and log back in for docker group changes to take effect." >&2
+    break
+  fi
+
   sleep 2
   WAITED=$((WAITED + 2))
   echo "  Waiting... ($WAITED/$MAX_WAIT seconds)" >&2
@@ -86,14 +110,17 @@ done
 
 if [ $WAITED -ge $MAX_WAIT ]; then
   echo "ERROR: Docker did not become ready within $MAX_WAIT seconds" >&2
-  echo "  Try: sudo systemctl start docker" >&2
+  echo "  Try:" >&2
+  echo "    sudo systemctl start docker" >&2
+  echo "    sudo systemctl status docker --no-pager" >&2
+  echo "    sudo journalctl -u docker --no-pager -n 200" >&2
   exit 1
 fi
 
 # Check Docker Compose plugin
 echo ""
 echo "[3/5] Checking Docker Compose..." >&2
-if docker compose version >/dev/null 2>&1; then
+if $DOCKER_CMD compose version >/dev/null 2>&1; then
   echo "  OK: Docker Compose plugin found" >&2
 else
   echo "ERROR: Docker Compose plugin not found" >&2
@@ -165,13 +192,6 @@ echo "[5/5] Starting Rizm with Docker Compose..." >&2
 COMPOSE_FILE="$REPO_ROOT/compose/docker-compose.$MODE.yml"
 
 cd "$REPO_ROOT"
-
-# Use sudo if docker command fails (user not in docker group yet)
-DOCKER_CMD="docker"
-if ! docker version >/dev/null 2>&1; then
-  echo "  Note: Using sudo for docker commands (you may need to log out/in after adding user to docker group)" >&2
-  DOCKER_CMD="sudo docker"
-fi
 
 $DOCKER_CMD compose -f "$COMPOSE_FILE" pull || echo "WARNING: docker compose pull failed, continuing anyway..." >&2
 
