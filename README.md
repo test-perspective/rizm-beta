@@ -22,6 +22,13 @@ Rizm enables teams to manage structured information in a configurable workspace.
 
 Capabilities depend on your configuration and the version.
 
+<img width="1476" height="831" alt="board" src="https://github.com/user-attachments/assets/e6a229e8-2739-410e-8aee-09ef50192e83" />
+
+
+<img width="1482" height="824" alt="wiki" src="https://github.com/user-attachments/assets/45dca702-2cfd-4cc8-9181-fc97d0752272" />
+
+<p></p>
+
 **Start Guide**: For detailed instructions, see the [Rizm Start Guide](https://kenputer-documents.scrollhelp.site/rizm/rizm-start-guide).
 
 ## Beta Status
