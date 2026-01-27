@@ -22,6 +22,15 @@ Rizm は、設定可能なワークスペース上で、構造化された情報
 
 提供される機能は、設定やバージョンによって変わります。
 
+
+<img width="1476" height="831" alt="board" src="https://github.com/user-attachments/assets/b9502fde-fe7d-49c2-b041-c58a8d4f32b5" />
+
+<p></p>
+
+<img width="1482" height="824" alt="wiki" src="https://github.com/user-attachments/assets/d87fe41b-f7d3-4938-8975-448164f043e6" />
+
+<p></p>
+
 **スタートガイド**: 詳細は [Rizm スタートガイド](https://kenputer-documents.scrollhelp.site/rizm/rizm-start-guide) を参照してください。
 
 ## ベータ版について
