@@ -201,6 +201,21 @@ Feedback is welcome and appreciated.
 
 - [GitHub Issues](https://github.com/test-perspective/rizm-beta/issues)
 
+## Licensing & Future Updates
+
+### License for current version
+The Docker images (Beta) provided by this repository are licensed under the **Apache License 2.0**.
+
+- **Commercial/personal use:** Free to use.
+- **Continued use:** There is no expiration for this version.
+
+### Future updates
+This project is under active development, and future releases may revise distribution, licensing, or support terms.
+
+- New features or specific releases may be offered under terms different from the current license.
+- If changes occur, we will announce them in this repository in advance or at the time of release.
+- The currently published Apache 2.0 images will not become retroactively unavailable.
+
 ## License
 
 Apache-2.0. See [`LICENSE`](LICENSE).
