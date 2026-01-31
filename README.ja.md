@@ -209,6 +209,8 @@ docker compose -f compose/docker-compose.local.yml down
 
 フィードバック歓迎です。
 
+- **お問い合わせ**: support@test-perspective.com
+- **会社名**: Test Perspective Inc.
 - [GitHub Issues](https://github.com/test-perspective/rizm-beta/issues)
 
 ## ライセンスと今後の運用について
