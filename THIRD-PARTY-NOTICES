@@ -1,0 +1,99 @@
+# Third-Party Notices
+
+This document lists third-party software components (SBOM: Software Bill of Materials) used in Rizm.
+
+This distribution uses MUI X Data Grid Premium under the MUI X commercial license.
+
+---
+
+## Frontend
+
+### Direct Dependencies (package.json dependencies)
+
+| Package | Version | License | Link |
+|---------|---------|---------|------|
+| @blocknote/ariakit | ^0.45.0 | MPL-2.0 | [SPDX](https://spdx.org/licenses/MPL-2.0.html) |
+| @blocknote/core | ^0.45.0 | MPL-2.0 | [SPDX](https://spdx.org/licenses/MPL-2.0.html) |
+| @blocknote/react | ^0.45.0 | MPL-2.0 | [SPDX](https://spdx.org/licenses/MPL-2.0.html) |
+| @dnd-kit/core | ^6.3.1 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| @dnd-kit/sortable | ^10.0.0 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| @dnd-kit/utilities | ^3.2.2 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| @emotion/react | ^11.14.0 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| @emotion/styled | ^11.14.1 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| @mui/material | ^7.3.6 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| @mui/x-data-grid-premium | 8.22.1 | Commercial | [MUI X Licensing](https://mui.com/x/introduction/licensing/) |
+| @mui/x-license | 8.22.0 | Commercial | [MUI X Licensing](https://mui.com/x/introduction/licensing/) |
+| @monaco-editor/react | ^4.6.0 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| jszip | ^3.10.1 | MIT OR GPL-3.0-or-later | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX GPL-3.0](https://spdx.org/licenses/GPL-3.0-or-later.html) |
+| lucide-react | ^0.344.0 | ISC | [SPDX](https://spdx.org/licenses/ISC.html) |
+| react | ^18.3.1 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| react-dom | ^18.3.1 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| react-router-dom | ^7.11.0 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+
+### Build / Dev (package.json devDependencies, bundled or used at build)
+
+| Package | Version | License | Link |
+|---------|---------|---------|------|
+| @vitejs/plugin-react | ^4.3.1 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| autoprefixer | ^10.4.18 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| postcss | ^8.4.35 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| tailwindcss | ^3.4.1 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| typescript | ^5.5.3 | Apache-2.0 | [SPDX](https://spdx.org/licenses/Apache-2.0.html) |
+| vite | ^5.4.2 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+
+---
+
+## Backend
+
+### Dependencies (Cargo.toml)
+
+| Crate | License | Link |
+|-------|---------|------|
+| anyhow | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| argon2 | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| axum | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| axum-extra | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| base64 | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| rand | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| r2d2 | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| r2d2_sqlite | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| reqwest | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| rusqlite | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| serde | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| serde_json | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| thiserror | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| tokio | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| tower-http | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| tracing | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| tracing-subscriber | MIT | [SPDX](https://spdx.org/licenses/MIT.html) |
+| url | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| uuid | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+| zip | MIT OR Apache-2.0 | [SPDX MIT](https://spdx.org/licenses/MIT.html) / [SPDX Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) |
+
+---
+
+## Infrastructure
+
+### Runtime (Docker images)
+
+| Component | License | Link |
+|-----------|---------|------|
+| Ubuntu (base image) | GPL, etc. | [Ubuntu Legal](https://ubuntu.com/legal) |
+| Nginx | BSD-2-Clause | [Nginx](https://nginx.org/LICENSE) |
+| Node.js (build) | MIT | [Node.js](https://github.com/nodejs/node/blob/main/LICENSE) |
+
+### Domain Deployment (HTTPS / docker-compose.domain.yml)
+
+| Component | License | Link |
+|-----------|---------|------|
+| nginx-proxy | MIT | [GitHub](https://github.com/nginx-proxy/nginx-proxy) |
+| acme-companion | MIT | [GitHub](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion) |
+
+---
+
+## How to Regenerate
+
+- **Frontend**: Run `npx license-checker --production` in the project root
+- **Backend**: Run `cargo license` (requires [cargo-license](https://github.com/onur/cargo-license)) in the `backend/` directory
+
+This file may be regenerated when dependencies are updated.

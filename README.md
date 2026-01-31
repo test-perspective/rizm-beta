@@ -218,6 +218,18 @@ This project is under active development, and future releases may revise distrib
 - If changes occur, we will announce them in this repository in advance or at the time of release.
 - The currently published Apache 2.0 images will not become retroactively unavailable.
 
+## Technology Stack
+
+Overview of Rizm's technology stack. For a detailed dependency list (SBOM), see [THIRD-PARTY-NOTICES](THIRD-PARTY-NOTICES).
+
+| Category | Main Technologies |
+|----------|-------------------|
+| **Frontend** | React, TypeScript, Tailwind CSS, Vite, MUI Material, BlockNote, Monaco Editor |
+| **Backend** | Rust (Axum, Tokio) |
+| **Infra / Middleware** | Docker, Nginx, SQLite |
+
+Note: This distribution uses MUI X Data Grid Premium under the MUI X commercial license.
+
 ## License
 
 Apache-2.0. See [`LICENSE`](LICENSE).

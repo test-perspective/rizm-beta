@@ -228,6 +228,18 @@ docker compose -f compose/docker-compose.local.yml down
 - 変更がある場合は、事前またはリリース時に本リポジトリにてお知らせいたします。
 - 現在公開している Apache 2.0 のイメージが、後から遡って利用不可になることはありません。
 
+## 主要スタック
+
+Rizm の技術スタック概要です。詳細な依存関係一覧（SBOM）は [THIRD-PARTY-NOTICES](THIRD-PARTY-NOTICES) を参照してください。
+
+| カテゴリ | 主要技術 |
+|----------|----------|
+| **Frontend** | React, TypeScript, Tailwind CSS, Vite, MUI Material, BlockNote, Monaco Editor |
+| **Backend** | Rust (Axum, Tokio) |
+| **Infra / Middleware** | Docker, Nginx, SQLite |
+
+※ 本配布物は MUI X 商用ライセンスに基づいて MUI X Data Grid Premium を使用しています。
+
 ## ライセンス
 
 Apache-2.0（[`LICENSE`](LICENSE) を参照）
