@@ -146,6 +146,7 @@ RIZM_WEB_IMAGE=kabekenputer/keel-web:latest
 KEEL_BOOTSTRAP_ADMIN_EMAIL=admin@example.local
 KEEL_BOOTSTRAP_ADMIN_PASSWORD=change-this-password
 KEEL_COOKIE_SECURE=false
+KEEL_CSRF_ALLOWED_ORIGIN=http://localhost:8080
 EOF
   fi
 else
@@ -183,6 +184,13 @@ if [ "$MODE" = "domain" ]; then
   fi
   
   echo "  Configured for domain mode: $DOMAIN" >&2
+fi
+
+# Local mode: allow CSRF for localhost
+if [ "$MODE" = "local" ]; then
+  if ! grep -q "^KEEL_CSRF_ALLOWED_ORIGIN=" "$ENV_PATH"; then
+    echo "KEEL_CSRF_ALLOWED_ORIGIN=http://localhost:8080" >> "$ENV_PATH"
+  fi
 fi
 
 # Start Docker Compose

@@ -93,6 +93,7 @@ RIZM_WEB_IMAGE=kabekenputer/keel-web:latest
 KEEL_BOOTSTRAP_ADMIN_EMAIL=admin@example.local
 KEEL_BOOTSTRAP_ADMIN_PASSWORD=change-this-password
 KEEL_COOKIE_SECURE=false
+KEEL_CSRF_ALLOWED_ORIGIN=http://localhost:8080
 "@ | Out-File -FilePath $envPath -Encoding utf8
   }
 } else {
@@ -130,6 +131,15 @@ if ($Mode -eq "domain") {
   }
   $envContent | Set-Content $envPath -Encoding utf8
   Write-Host "  Configured for domain mode: $Domain" -ForegroundColor Green
+}
+
+# Local mode: allow CSRF for localhost
+if ($Mode -eq "local") {
+  $envContent = Get-Content $envPath -Raw
+  if ($envContent -notmatch '^KEEL_CSRF_ALLOWED_ORIGIN=') {
+    $envContent += "`nKEEL_CSRF_ALLOWED_ORIGIN=http://localhost:8080`n"
+    $envContent | Set-Content $envPath -Encoding utf8
+  }
 }
 
 # Start Docker Compose
