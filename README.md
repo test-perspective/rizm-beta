@@ -146,7 +146,7 @@ Note: Let's Encrypt requires port 80 (HTTP) reachable from the Internet for HTTP
 
 In domain mode, Rizm applies `client_max_body_size 512m;` by default via nginx-proxy, so new users can upload larger files without extra manual steps.
 
-- Config file: `nginx-proxy/conf.d/client_max_body_size.conf`
+- Config file: `nginx-proxy/vhost.d/default`
 - Default value: `512m`
 
 To change the limit (example: 1 GB):

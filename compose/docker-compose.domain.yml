@@ -7,8 +7,7 @@ services:
       - "443:443"
     volumes:
       - certs:/etc/nginx/certs:ro
-      - vhost.d:/etc/nginx/vhost.d
-      - ../nginx-proxy/conf.d/client_max_body_size.conf:/etc/nginx/conf.d/40-client-max-body-size.conf:ro
+      - ../nginx-proxy/vhost.d:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
     restart: unless-stopped
@@ -23,7 +22,7 @@ services:
       DEFAULT_EMAIL: ${LETSENCRYPT_EMAIL:-}
     volumes:
       - certs:/etc/nginx/certs:rw
-      - vhost.d:/etc/nginx/vhost.d:rw
+      - ../nginx-proxy/vhost.d:/etc/nginx/vhost.d:rw
       - html:/usr/share/nginx/html:rw
       - acme:/etc/acme.sh
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -60,6 +59,5 @@ services:
 volumes:
   rizm-data:
   certs:
-  vhost.d:
   html:
   acme:

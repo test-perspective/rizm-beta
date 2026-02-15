@@ -152,7 +152,7 @@ sudo docker logs acme-companion --tail 200
 ドメイン運用では、nginx-proxy に `client_max_body_size 512m;` をデフォルト適用しています。  
 新規ユーザーは追加の手作業なしで、比較的大きい添付ファイルを扱えます。
 
-- 設定ファイル: `nginx-proxy/conf.d/client_max_body_size.conf`
+- 設定ファイル: `nginx-proxy/vhost.d/default`
 - 既定値: `512m`
 
 上限を変更したい場合（例: 1GB）:
