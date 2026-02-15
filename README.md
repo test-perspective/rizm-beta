@@ -142,6 +142,26 @@ sudo docker logs acme-companion --tail 200
 
 Note: Let's Encrypt requires port 80 (HTTP) reachable from the Internet for HTTP-01 validation.
 
+#### Attachment upload size limit (default and customization)
+
+In domain mode, Rizm applies `client_max_body_size 512m;` by default via nginx-proxy, so new users can upload larger files without extra manual steps.
+
+- Config file: `nginx-proxy/conf.d/client_max_body_size.conf`
+- Default value: `512m`
+
+To change the limit (example: 1 GB):
+
+```bash
+# 1) Edit the value
+# client_max_body_size 1g;
+
+# 2) Recreate proxy-related containers
+docker compose -f compose/docker-compose.domain.yml up -d --force-recreate nginx-proxy web acme-companion
+
+# 3) Verify applied config
+docker compose -f compose/docker-compose.domain.yml exec nginx-proxy sh -lc "nginx -T 2>/dev/null | grep -n client_max_body_size"
+```
+
 ### Manual Setup
 
 If you prefer to set up manually instead of using the setup scripts:

@@ -147,6 +147,27 @@ sudo docker logs acme-companion --tail 200
 
 ※ Let's Encrypt は HTTP-01 検証のため、外部から `80/tcp` で到達できる必要があります。
 
+#### 添付ファイルのアップロード上限（デフォルトと変更方法）
+
+ドメイン運用では、nginx-proxy に `client_max_body_size 512m;` をデフォルト適用しています。  
+新規ユーザーは追加の手作業なしで、比較的大きい添付ファイルを扱えます。
+
+- 設定ファイル: `nginx-proxy/conf.d/client_max_body_size.conf`
+- 既定値: `512m`
+
+上限を変更したい場合（例: 1GB）:
+
+```bash
+# 1) 値を編集
+# client_max_body_size 1g;
+
+# 2) proxy関連コンテナを再作成
+docker compose -f compose/docker-compose.domain.yml up -d --force-recreate nginx-proxy web acme-companion
+
+# 3) 反映確認
+docker compose -f compose/docker-compose.domain.yml exec nginx-proxy sh -lc "nginx -T 2>/dev/null | grep -n client_max_body_size"
+```
+
 ### 手動で起動する
 
 セットアップスクリプトを使わずに手動でセットアップする場合：
