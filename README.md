@@ -232,6 +232,18 @@ docker compose -f compose/docker-compose.local.yml logs -f
 docker compose -f compose/docker-compose.local.yml down
 ```
 
+### Updating
+
+To update to a newer version:
+
+```bash
+git pull
+docker compose -f compose/docker-compose.local.yml pull
+docker compose -f compose/docker-compose.local.yml up -d
+```
+
+For domain deployment, use `compose/docker-compose.domain.yml` instead.
+
 ## Feedback
 
 Feedback is welcome and appreciated.

@@ -243,6 +243,18 @@ docker compose -f compose/docker-compose.local.yml logs -f
 docker compose -f compose/docker-compose.local.yml down
 ```
 
+### アップデート
+
+新しいバージョンに更新する場合:
+
+```bash
+git pull
+docker compose -f compose/docker-compose.local.yml pull
+docker compose -f compose/docker-compose.local.yml up -d
+```
+
+ドメイン運用の場合は `compose/docker-compose.domain.yml` に読み替えてください。
+
 ## フィードバック
 
 フィードバック歓迎です。
