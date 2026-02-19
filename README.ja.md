@@ -168,6 +168,23 @@ docker compose -f compose/docker-compose.domain.yml up -d --force-recreate nginx
 docker compose -f compose/docker-compose.domain.yml exec nginx-proxy sh -lc "nginx -T 2>/dev/null | grep -n client_max_body_size"
 ```
 
+#### MCP（HTTP）
+
+My Profile 画面で API キーを作成し、以下の `your-generated-api-key-here` に記載してください。
+
+```json
+{
+  "mcpServers": {
+    "rizm-http": {
+      "url": "https://your-domain.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer your-generated-api-key-here"
+      }
+    }
+  }
+}
+```
+
 ### 手動で起動する
 
 セットアップスクリプトを使わずに手動でセットアップする場合：

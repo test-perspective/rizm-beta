@@ -162,6 +162,23 @@ docker compose -f compose/docker-compose.domain.yml up -d --force-recreate nginx
 docker compose -f compose/docker-compose.domain.yml exec nginx-proxy sh -lc "nginx -T 2>/dev/null | grep -n client_max_body_size"
 ```
 
+#### MCP (HTTP)
+
+Create an API key on the My Profile screen and enter it in `your-generated-api-key-here` below.
+
+```json
+{
+  "mcpServers": {
+    "rizm-http": {
+      "url": "https://your-domain.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer your-generated-api-key-here"
+      }
+    }
+  }
+}
+```
+
 ### Manual Setup
 
 If you prefer to set up manually instead of using the setup scripts:
