@@ -253,6 +253,7 @@ Feedback is welcome and appreciated.
 - **Contact**: support@test-perspective.com
 - **Company**: Test Perspective Inc.
 - [GitHub Issues](https://github.com/test-perspective/rizm-beta/issues)
+- [Forum（Q&A,Announcements,How-to,Feedback）](https://forum.test-perspective.com/)
 
 ## Licensing & Future Updates
 
