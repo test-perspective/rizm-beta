@@ -40,6 +40,8 @@ This is an early beta.
 - Documentation is intentionally minimal
 - Not recommended for mission-critical use
 
+Roadmap: https://github.com/test-perspective/rizm-beta/wiki/Roadmap
+
 ## Availability
 
 - Self-hosted deployment
