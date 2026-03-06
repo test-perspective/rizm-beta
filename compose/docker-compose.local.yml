@@ -1,4 +1,8 @@
 services:
+  collab:
+    image: ${RIZM_COLLAB_IMAGE:-kabekenputer/keel-collab:latest}
+    restart: unless-stopped
+
   api:
     image: ${RIZM_API_IMAGE:-kabekenputer/keel-api:latest}
     env_file:
@@ -19,6 +23,7 @@ services:
       - "8080:80"
     depends_on:
       - api
+      - collab
     restart: unless-stopped
 
 volumes:
