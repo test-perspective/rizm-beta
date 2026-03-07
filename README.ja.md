@@ -59,7 +59,7 @@ bash ./scripts/setup-macos.sh local
 
 `http://localhost:8080` でアクセス。デモではログイン画面の **「Sign in as Admin」** をクリック。初回起動後は `admin@example.local` / `change-this-password` でログインできます。
 
-ドメイン運用、手動セットアップ、MCP 設定などの詳しい手順は [Wiki](https://github.com/test-perspective/rizm-beta/wiki) にまとめています。まずは [Deployment Guide](https://github.com/test-perspective/rizm-beta/wiki/Deployment-Guide)、[デプロイガイド（日本語）](https://github.com/test-perspective/rizm-beta/wiki/Deployment-Guide.ja)、[MCP Setup](https://github.com/test-perspective/rizm-beta/wiki/MCP-Setup) を参照してください。
+ドメイン運用、手動セットアップ、MCP 設定などの詳しい手順は [Wiki](https://github.com/test-perspective/rizm-beta/wiki) にまとめています。[Deployment-Guide](https://github.com/test-perspective/rizm-beta/wiki/Deployment-Guide)、[Deployment-Guide.ja](https://github.com/test-perspective/rizm-beta/wiki/Deployment-Guide.ja)、[MCP-Setup](https://github.com/test-perspective/rizm-beta/wiki/MCP-Setup)、[Licensing-and-Future-Updates](https://github.com/test-perspective/rizm-beta/wiki/Licensing-and-Future-Updates) を参照してください。
 
 ## Feedback & Community
 
@@ -80,7 +80,7 @@ bash ./scripts/setup-macos.sh local
 
 ## License
 
-このリリースは Apache-2.0 で提供されています。詳しくは [LICENSE](LICENSE) を参照してください。ライセンス方針や今後の更新に関する案内は [Licensing and Future Updates](https://github.com/test-perspective/rizm-beta/wiki/Licensing-and-Future-Updates) にまとめています。
+このリリースは Apache-2.0 で提供されています。詳しくは [LICENSE](LICENSE) を参照してください。ライセンス方針や今後の更新に関する案内は [Licensing-and-Future-Updates](https://github.com/test-perspective/rizm-beta/wiki/Licensing-and-Future-Updates) にまとめています。
 
 ## Current Status
 
