@@ -59,7 +59,7 @@ bash ./scripts/setup-macos.sh local
 
 Access Rizm at `http://localhost:8080`. Log in with **Sign in as Admin** on the demo, or use the default credentials after first run: `admin@example.local` / `change-this-password`.
 
-For domain deployment, manual setup, MCP configuration, and other operational details, see the [Wiki](https://github.com/test-perspective/rizm-beta/wiki): [Deployment-Guide](https://github.com/test-perspective/rizm-beta/wiki/Deployment-Guide), [Deployment-Guide.ja](https://github.com/test-perspective/rizm-beta/wiki/Deployment-Guide.ja), [MCP-Setup](https://github.com/test-perspective/rizm-beta/wiki/MCP-Setup), [Licensing-and-Future-Updates](https://github.com/test-perspective/rizm-beta/wiki/Licensing-and-Future-Updates).
+For domain deployment, manual setup, MCP configuration, and other operational details, see the [Wiki](https://github.com/test-perspective/rizm-beta/wiki): [Deployment Guide](https://github.com/test-perspective/rizm-beta/wiki/Deployment%E2%80%90Guide), [Deployment Guide.ja](https://github.com/test-perspective/rizm-beta/wiki/Deployment%E2%80%90Guide.ja), [MCP Setup](https://github.com/test-perspective/rizm-beta/wiki/MCP%E2%80%90Setup), [Licensing and Future Updates](https://github.com/test-perspective/rizm-beta/wiki/Licensing%E2%80%90and%E2%80%90Future%E2%80%90Updates).
 
 ## Feedback & Community
 
@@ -80,7 +80,7 @@ For a detailed dependency list (SBOM), see [THIRD-PARTY-NOTICES](THIRD-PARTY-NOT
 
 ## License
 
-This release is licensed under Apache-2.0. See [LICENSE](LICENSE). For licensing policy and future update notes, see [Licensing-and-Future-Updates](https://github.com/test-perspective/rizm-beta/wiki/Licensing-and-Future-Updates).
+This release is licensed under Apache-2.0. See [LICENSE](LICENSE). For licensing policy and future update notes, see [Licensing and Future Updates](https://github.com/test-perspective/rizm-beta/wiki/Licensing%E2%80%90and%E2%80%90Future%E2%80%90Updates).
 
 ## Current Status
 
